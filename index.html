@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for performance -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="High-performance e-commerce site with optimized loading and smooth user experience.">
+    <title>Optimized E-Commerce Home</title>
+
+    <!-- Critical CSS (Inline) to speed up render -->
+    <style>
+        /* Critical CSS: Inline the most important styles to load them immediately */
+        body, h1 {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <!-- External CSS (Deferred) -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+
+    <!-- Favicon for faster page loading -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preload important fonts to avoid delays -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+
+    <!-- Preload essential images -->
+    <link rel="preload" href="product1.jpg" as="image">
+    <link rel="preload" href="product2.jpg" as="image">
+
+    <!-- Asynchronously load important JS -->
+    <script src="analytics.js" async></script>
+
+</head>
+<body>
+    <!-- Content -->
+    <h1>Welcome to Our Optimized E-Commerce Site</h1>
+
+    <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1" loading="lazy">
+            <h3>Product 1</h3>
+            <p>A great product for your needs.</p>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2" loading="lazy">
+            <h3>Product 2</h3>
+            <p>Another excellent product for you!</p>
+        </div>
+    </div>
+
+    <!-- Lazy Load JS and defer non-essential scripts -->
+    <script src="main.js" defer></script>
+</body>
+</html>
